@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/douglastomizawa/processo-seletivo/issues"
   },
-  "homepage": "https://github.com/douglastomizawa/processo-seletivo#readme"
+  "homepage": "https://github.com/douglastomizawa/processo-seletivo#readme",
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
 }
