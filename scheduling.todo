@@ -1,0 +1,12 @@
+Validações necessárias:
+    Cada array do conjunto representa uma lista de Jobs a serem executados em sequência:
+        ☐ Validar se os jobs estão ordenados pela data máxima de conclusão
+
+    Cada array deve conter jobs que sejam executados em no máximo 8h:
+        ☐ Verificar se se a soma dos tempos estimados de cada array são menores que 8h
+
+    Deve ser respeitada a data máxima de conclusão do Job:
+        ☐ Verificar se o job será executado até sua data máxima de conclusão
+
+    Todos os Jobs devem ser executados dentro da janela de execução (data início e fim):
+        ☐ Verificar se todos os jobs estão dentro do range de datas
