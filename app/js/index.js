@@ -6,7 +6,7 @@ const scheduling = ({ range, jobsList }) => {
     const days = new Array(
         new Date(range.finalDate).getDate() - new Date(range.startDate).getDate() + 1
     );
-    
+
     const schedule = [];
 
     for (let i = 0; i < days.length; i++) {
@@ -34,7 +34,15 @@ const scheduling = ({ range, jobsList }) => {
         const element = jobsList[i];
         const estimatedTime = element.estimatedTime;
         console.log(element);
-        console.log(estimatedTime);
+        console.log(estimatedTime)
+
+        for (let index = 0; index < days.length; index++) {
+            let scheduledTime = schedule[index].hours;
+            let day = days[index];
+            for (let hour = 0; hour < day.length; hour++) { console.log(hour) }
+            
+        }
+
     }
     console.log(days);
     console.log(schedule)
