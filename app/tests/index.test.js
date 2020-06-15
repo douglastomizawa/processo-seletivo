@@ -100,3 +100,33 @@ describe("- Cada array deve conter jobs que sejam executados em no máximo 8h:",
             .toEqual([[1], [2], [3]]);
     });
 });
+
+
+describe("- Deve ser respeitada a data máxima de conclusão do Job:", () => {
+    test("Caso o job passe do prazo, não será exibido em nenhum array", () => {
+        expect(scheduling({
+            range,
+            jobsList: [
+                {
+                    'id': 1,
+                    'description': 'Importação de arquivos de fundos',
+                    'maxDate': '2019-11-10T12:00:00',
+                    'estimatedTime': 6,
+                },
+                {
+                    'id': 2,
+                    'description': 'Importação de dados da Base Legada',
+                    'maxDate': '2019-11-11T12:00:00',
+                    'estimatedTime': 4,
+                },
+                {
+                    'id': 3,
+                    'description': 'Importação de dados da Base Legada',
+                    'maxDate': '2019-11-11T08:00:00',
+                    'estimatedTime': 6,
+                }
+            ]
+        }))
+            .toEqual([[1], [3]]);
+    });
+});

@@ -9,7 +9,7 @@ Validações necessárias:
         ✔ Verificar se se a soma dos tempos estimados de cada array são menores que 8h. @done(20-06-15 01:45)
 
     Deve ser respeitada a data máxima de conclusão do Job:
-        ☐ Verificar se o job será executado até sua data máxima de conclusão.
+        ✔ Verificar se o job será executado até sua data máxima de conclusão. @done(20-06-15 02:01)
 
     Todos os Jobs devem ser executados dentro da janela de execução (data início e fim):
         ☐ Verificar se todos os jobs estão dentro do range de datas.
