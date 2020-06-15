@@ -6,7 +6,7 @@ Validações necessárias:
         ✔ Validar se os jobs estão ordenados pela data máxima de conclusão. @done(20-06-15 01:33)
 
     Cada array deve conter jobs que sejam executados em no máximo 8h:
-        ☐ Verificar se se a soma dos tempos estimados de cada array são menores que 8h.
+        ✔ Verificar se se a soma dos tempos estimados de cada array são menores que 8h. @done(20-06-15 01:45)
 
     Deve ser respeitada a data máxima de conclusão do Job:
         ☐ Verificar se o job será executado até sua data máxima de conclusão.
