@@ -30,6 +30,12 @@ const scheduling = ({ range, jobsList }) => {
             }
         }
     })
+    for (let i = 0; i < jobsList.length; i++) {
+        const element = jobsList[i];
+        const estimatedTime = element.estimatedTime;
+        console.log(element);
+        console.log(estimatedTime);
+    }
     console.log(days);
     console.log(schedule)
 
