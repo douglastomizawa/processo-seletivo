@@ -45,6 +45,9 @@ const scheduling = ({ range, jobsList }) => {
         for (let index = 0; index < days.length; index++) {
             let scheduledTime = schedule[index].hours;
             let day = days[index];
+            if (next) {
+                break;
+            }
             for (let hour = 0; hour < day.length; hour++) {
                 if (day[hour] === 0 && 8 >= (scheduledTime + estimatedTime)) {
                     scheduledTime += estimatedTime;
@@ -54,6 +57,7 @@ const scheduling = ({ range, jobsList }) => {
                     insert.jobsList.push(element.id);
                     console.log(insert);
                     next = true;
+                    break;
                 }
             }
 
