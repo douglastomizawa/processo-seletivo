@@ -32,7 +32,7 @@ const scheduling = ({ range, jobsList }) => {
         const element = jobsList[i];
         const estimatedTime = element.estimatedTime;
         let next = false;
-        if (next) {
+        if (next || new Date(element.maxDate) < new Date(range.startDate)) {
             break;
         }
         for (let index = 0; index < days.length; index++) {
