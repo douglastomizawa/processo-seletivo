@@ -3,7 +3,7 @@ Validações necessárias:
         ✔ Verificar se o retorno é de acordo com o esperado. @done(20-06-15 01:19)
 
     Cada array do conjunto representa uma lista de Jobs a serem executados em sequência:
-        ☐ Validar se os jobs estão ordenados pela data máxima de conclusão.
+        ✔ Validar se os jobs estão ordenados pela data máxima de conclusão. @done(20-06-15 01:33)
 
     Cada array deve conter jobs que sejam executados em no máximo 8h:
         ☐ Verificar se se a soma dos tempos estimados de cada array são menores que 8h.
