@@ -30,16 +30,22 @@ const scheduling = ({ range, jobsList }) => {
             }
         }
     })
+    
     for (let i = 0; i < jobsList.length; i++) {
         const element = jobsList[i];
         const estimatedTime = element.estimatedTime;
         console.log(element);
         console.log(estimatedTime)
+        let next = false;
+
+        if (next) {
+            break;
+        }
 
         for (let index = 0; index < days.length; index++) {
             let scheduledTime = schedule[index].hours;
             let day = days[index];
-            for (let hour = 0; hour < day.length; hour++) { 
+            for (let hour = 0; hour < day.length; hour++) {
                 if (day[hour] === 0 && 8 >= (scheduledTime + estimatedTime)) {
                     scheduledTime += estimatedTime;
                     day.fill(1, hour, hour + estimatedTime);
@@ -47,9 +53,10 @@ const scheduling = ({ range, jobsList }) => {
                     insert.hours = scheduledTime;
                     insert.jobsList.push(element.id);
                     console.log(insert);
+                    next = true;
                 }
-             }
-            
+            }
+
         }
 
     }
