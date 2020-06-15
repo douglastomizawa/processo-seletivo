@@ -1,6 +1,6 @@
 Validações necessárias:
     O output deve ser [[1, 3], [2]]:
-        ☐ Verificar se o retorno é de acordo com o esperado.
+        ✔ Verificar se o retorno é de acordo com o esperado. @done(20-06-15 01:19)
 
     Cada array do conjunto representa uma lista de Jobs a serem executados em sequência:
         ☐ Validar se os jobs estão ordenados pela data máxima de conclusão.
