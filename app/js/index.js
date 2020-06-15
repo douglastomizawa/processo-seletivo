@@ -6,9 +6,8 @@ const scheduling = ({ range, jobsList }) => {
     const days = new Array(
         new Date(range.finalDate).getDate() - new Date(range.startDate).getDate() + 1
     );
-
+    let count = 0;
     const schedule = [];
-
     for (let i = 0; i < days.length; i++) {
         days[i] = new Array(24);
         schedule.push({
@@ -16,7 +15,6 @@ const scheduling = ({ range, jobsList }) => {
             jobsList: new Array()
         });
     }
-
     days[0][new Date(range.startDate).getHours()] = '-';
     days[days.length - 1][new Date(range.finalDate).getHours()] = '-';
     days.forEach((day) => {
@@ -30,18 +28,13 @@ const scheduling = ({ range, jobsList }) => {
             }
         }
     })
-    
     for (let i = 0; i < jobsList.length; i++) {
         const element = jobsList[i];
         const estimatedTime = element.estimatedTime;
-        console.log(element);
-        console.log(estimatedTime)
         let next = false;
-
         if (next) {
             break;
         }
-
         for (let index = 0; index < days.length; index++) {
             let scheduledTime = schedule[index].hours;
             let day = days[index];
@@ -55,18 +48,13 @@ const scheduling = ({ range, jobsList }) => {
                     const insert = schedule[index];
                     insert.hours = scheduledTime;
                     insert.jobsList.push(element.id);
-                    console.log(insert);
                     next = true;
                     break;
                 }
             }
-
         }
-
     }
-    console.log(days);
-    console.log(schedule)
-
+    return schedule.map((item) => { return item.jobsList });
 }
-console.log(jobsList);
+console.log(scheduling({ range, jobsList }));
 module.exports = scheduling;
