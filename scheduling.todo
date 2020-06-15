@@ -12,4 +12,4 @@ Validações necessárias:
         ✔ Verificar se o job será executado até sua data máxima de conclusão. @done(20-06-15 02:01)
 
     Todos os Jobs devem ser executados dentro da janela de execução (data início e fim):
-        ☐ Verificar se todos os jobs estão dentro do range de datas.
+        ✔ Verificar se todos os jobs estão dentro do range de datas. @done(20-06-15 02:22)

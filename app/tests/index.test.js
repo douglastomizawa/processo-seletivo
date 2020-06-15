@@ -130,3 +130,54 @@ describe("- Deve ser respeitada a data máxima de conclusão do Job:", () => {
             .toEqual([[1], [3]]);
     });
 });
+
+
+describe("- Todos os Jobs devem ser executados dentro da janela de execução:", () => {
+    test("Verificar se todos os jobs estão dentro do range de datas", () => {
+        expect(scheduling({
+            range: {
+                'startDate': '2019-11-10T09:00:00',
+                'finalDate': '2019-11-12T12:00:00'
+            },
+            jobsList: [
+                {
+                    'id': 1,
+                    'description': 'Importação de arquivos de fundos',
+                    'maxDate': '2019-11-11T12:00:00',
+                    'estimatedTime': 1,
+                },
+                {
+                    'id': 2,
+                    'description': 'Importação de dados da Base Legada',
+                    'maxDate': '2019-11-11T08:00:00',
+                    'estimatedTime': 7,
+                },
+                {
+                    'id': 3,
+                    'description': 'Importação de dados da Base Legada',
+                    'maxDate': '2019-11-12T12:00:00',
+                    'estimatedTime': 6,
+                },
+                {
+                    'id': 4,
+                    'description': 'Importação de dados da Base Legada',
+                    'maxDate': '2019-11-11T08:00:00',
+                    'estimatedTime': 6,
+                },
+                {
+                    'id': 5,
+                    'description': 'Importação de dados da Base Legada',
+                    'maxDate': '2019-11-12T08:00:00',
+                    'estimatedTime': 2,
+                },
+                {
+                    'id': 6,
+                    'description': 'Importação de dados da Base Legada',
+                    'maxDate': '2019-11-10T09:00:00',
+                    'estimatedTime': 2,
+                }
+            ]
+        }))
+            .toEqual([[6, 4], [2, 1], [5, 3]]);
+    });
+});
